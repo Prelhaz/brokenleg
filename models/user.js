@@ -6,9 +6,9 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   username: {
-    type: String
-    // required: true,
-    // unique:true
+    type: String,
+    required: true,
+    unique:true
   },
   email: {
     type: String,
@@ -32,6 +32,17 @@ schema.statics.signUp = signUpStatic;
 schema.statics.findByEmail = function(email) {
   const Model = this;
   return Model.findOne({ email })
+    .then(user => {
+      return Promise.resolve(user);
+    })
+    .catch(error => {
+      return Promise.reject(error);
+    });
+};
+
+schema.statics.findByUsername = function(username) {
+  const Model = this;
+  return Model.findOne({ username })
     .then(user => {
       return Promise.resolve(user);
     })

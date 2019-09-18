@@ -2,13 +2,13 @@
 
 const bcrypt = require('bcrypt');
 
-module.exports = function(email, password) {
+module.exports = function(username, email, password) {
 
   const Model = this;
 
   let auxiliaryUser;
 
-  return Model.findByEmail(email)
+  return Model.findByUsername(username)
     .then(user => {
       if (!user) {
         throw new Error('USER_NOT_FOUND');

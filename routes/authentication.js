@@ -10,10 +10,10 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  // const username = req.body.username;
+  const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
-  User.signUp(email, password)
+  User.signUp(username, email, password)
     .then(user => {
       req.session.user = {
         _id: user._id
@@ -33,14 +33,15 @@ router.get('/signin', (req, res, next) => {
 
 
 router.post('/signin', (req, res, next) => {
-  const email = req.body.email;
+  const username = req.body.username;
+  const email = User.email;
   const password = req.body.password;
-  User.signIn(email, password)
+  User.signIn(username, email, password)
     .then(user => {
       req.session.user = {
         _id: user._id
       };
-      console.log('Signed in user', req.session);
+      console.log('Signed in user', user);
       res.redirect('/');
     })
     .catch(error => {

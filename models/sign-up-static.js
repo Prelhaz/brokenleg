@@ -2,7 +2,8 @@
 
 const bcrypt = require('bcrypt');
 
-module.exports = function(email, password) {
+module.exports = function(username, email, password) {
+  
   const Model = this;
 
   return Model.findByEmail(email)
@@ -15,6 +16,7 @@ module.exports = function(email, password) {
     })
     .then(hash => {
       return Model.create({
+        username,
         email,
         passwordHash: hash
       });

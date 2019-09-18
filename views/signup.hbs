@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aspot signup</title>
-</head>
-
-<body>
-<br><br><br>
-
-    <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Sign-up</h1>
-    <p class="lead">Create your own account and save your spots, share locations with your friends and much more.</p>
-  </div>
-</div>
-
 <div class='container'>
      <form method="POST" action="/user/signup">
         <div class="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input type="text" name="username" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+            <small id="emailHelp" class="form-text text-muted">Choose a username</small>
+        </div>
+        <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" name="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
+            <input type="email" name="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
@@ -37,8 +21,3 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-    
-
-</body>
-
-</html>
