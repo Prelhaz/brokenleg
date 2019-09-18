@@ -1,0 +1,12 @@
+<div class="movies-wrapper">
+  {{#each pictures}}
+    <div class="movie-item">
+      <img src="{{this.imgPath}}" alt="">
+      <h4>{{this.title}}</h4>
+      <p>{{this.description}}</p>
+    </div>
+  {{else}}
+    <p>There are no pictures yet! :(</p>
+  {{/each}}
+</div>
+<!-- Learning unit ex -->
