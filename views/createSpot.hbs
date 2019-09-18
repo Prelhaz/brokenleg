@@ -1,6 +1,6 @@
 <script src="./../public/scripts/selectMultipleFiles.js"></script>
 
-<div class='container'>
+{{!-- <div class='container'>
     <h1>Create your spot</h1>
 </div>
 <form method="POST" action="">
@@ -33,4 +33,26 @@
     <output id="result" />
   </article>
   <button type="submit" class="btn btn-primary">Submit</button>
+</form> --}}
+
+
+<a href="/">Return</a>
+<h1>Create a Spot</h1>
+
+<form action="/create" method="post">
+  
+ <label>Name:</label>
+  <input type="text" name="name">
+
+ <label>Type:</label>
+  <input type="text" name="type">
+
+ <label for="adress">Adress</label>
+  <input type="text" name:"adress" placeholder="Adress">
+
+ <label>Location</label>
+  <input type="text" name="latitude" placeholder="latitude" >
+  <input type="text" name="longitude" placeholder="longitude">
+
+  <button type="submit">Create</button>
 </form>

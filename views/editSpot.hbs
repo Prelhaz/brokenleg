@@ -1,4 +1,4 @@
-<h1>Spots Edit</h1>
+{{!-- <h1>Spots Edit</h1>
 
 
 <form action="/createSpot/{{spot._id}}/edit" method="post">
@@ -11,4 +11,22 @@
   <button type="submit" class="btn btn-primary">Edit Spot</button> 
   <button type="button" class="btn btn-danger">Delete</button>
 
+</form> --}}
+
+
+<a href="/">Return</a>
+<h1>Edit a SkatePark</h1>
+<form action="/edit/{{_id}}" method="POST">
+  
+  <label>Name:</label>
+  <input type="text" name="name" value="{{name}}">
+
+  <label>Type:</label>
+  <input type="text" name="type" value="{{type}}">
+
+ <label>Location</label>
+  <input type="text" name="latitude" placeholder="latitude" value="{{location.coordinates.[1]}}" >
+  <input type="text" name="longitude" placeholder="longitude" value="{{location.coordinates.[0]}}">
+
+  <button type="submit">EDIT</button>
 </form>
