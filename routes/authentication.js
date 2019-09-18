@@ -19,7 +19,7 @@ router.post('/signup', (req, res, next) => {
         _id: user._id
       };
       console.log('Signed up user', user);
-      res.redirect('/user/:userId'); 
+      res.redirect(`/profile/${user._id}`); 
     })
     .catch(error => {
       console.log('Error during sign-up process', error);
@@ -42,7 +42,7 @@ router.post('/signin', (req, res, next) => {
         _id: user._id
       };
       console.log('Signed in user', user);
-      res.redirect('/profile');
+      res.redirect(`/profile/${user._id}`);
     })
     .catch(error => {
       console.log('Error during sign-in process', error);
