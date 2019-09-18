@@ -1,0 +1,36 @@
+<script src="./../public/scripts/selectMultipleFiles.js"></script>
+
+<div class='container'>
+    <h1>Create your spot</h1>
+</div>
+<form method="POST" action="">
+  <div class="form-group">
+    <label for="spotName">Name</label>
+    <input type="text" name="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Spot Name">
+    <small id="emailHelp" class="form-text text-muted">Spot Name</small>
+  </div>
+  <div class="form-group">
+    <label for="adress">Adress</label>
+    <input type="text" name:"adress" class="form-control" id="exampleInputAdress" aria-describedby="emailHelp" placeholder="Adress">
+    <small id="emailHelp" class="form-text text-muted">Adress</small>
+  </div>
+  <div class="form-group">
+    <label for="latitude">Latitude</label>
+    <input type="number" name="lat" class="form-control" id="exampleInputLat" aria-describedby="emailHelp" placeholder="Latitude">
+    <small id="emailHelp" class="form-text text-muted">Latitude</small>
+  </div>
+  <div class="form-group">
+    <label for="longitude">Longitude</label>
+    <input type="number" name="lng" class="form-control" id="exampleInputLng" placeholder="Longitude">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" aria-label="With textarea"></textarea>
+  </div>
+  <article>
+    <label for="files">Select multiple files: </label>
+    <input id="files" type="file" multiple/>
+    <output id="result" />
+  </article>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

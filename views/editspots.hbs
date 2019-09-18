@@ -1,0 +1,14 @@
+<h1>Spots Edit</h1>
+
+
+<form action="/createSpot/{{spot._id}}/edit" method="post">
+
+  SpotName: <input type="text" name="name" value="{{spot.name}}"><br>
+  SpotAdress: <input type="text" name="adress" value="{{spot.adress}}"><br>
+  SpotLatitude: <input type="number" name="lat" value="{{spot.lat}}"><br>
+  SpotLongitude: <input type="number" name="lng" value="{{spot.lng}}"><br>
+  SpotDescription: <input type="text" name="description" value="{{spot.description}}"><br>
+  <button type="submit" class="btn btn-primary">Edit Spot</button> 
+  <button type="button" class="btn btn-danger">Delete</button>
+
+</form>
