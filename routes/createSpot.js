@@ -93,7 +93,7 @@ router.post('/createSpot', (req, res, next) => {
 
   const location = {
     type: 'Point',
-    coordinates: [longitude, latitude],
+    coordinates: [longitude, latitude]
   };
   const newSpot = new Spots({ name, type, location });
 
@@ -122,7 +122,7 @@ router.post('/editSpots/:id', (req, res, next) => {
 
   const location = {
     type: 'Point',
-    coordinates: [longitude, latitude],
+    coordinates: [longitude, latitude]
   };
 
   Spots.update({ _id: req.params.id }, { $set: { name, type, location } })
@@ -138,7 +138,7 @@ router.post('/deleteSpots/:id', (req, res, next) => {
   const spots = req.params.id;
   Spots.findByIdAndDelete(spots)
     .then(() => {
-      res.redirect('/');
+      res.redirect('/createSpot');
     })
     .catch(err => console.log(err));
 });

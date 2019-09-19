@@ -6,10 +6,10 @@ const Picture = require('../models/picture');
 const uploadCloud = require('../config/cloudinary');
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/picture', (req, res, next) => {
   Picture.find()
   .then((pictures) => {
-    res.render('index', { pictures });
+    res.render('picture', { pictures });
   })
   .catch((error) => {
     console.log(error);
