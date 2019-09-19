@@ -12,7 +12,7 @@ cloudinary.config({
 
 const storage = cloudinaryStorage({
   cloudinary: cloudinary,
-  folder: 'nome-da-pasta',
+  folder: 'brokenleg',
   allowedFormats: ['jpg', 'png'],
   filename: function(req, file, cb) {
     cb(null, file.originalname);
