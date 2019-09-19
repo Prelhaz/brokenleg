@@ -72,7 +72,7 @@ app.use('/', indexRouter);
 app.use('/user', authenticationRouter);
 app.use('/map', spotsRouter);
 app.use('/', usersUpdateRouter);
-app.use('/createSpot', createSpotRouter);
+app.use('/', createSpotRouter);
 app.use('/picture', pictureRouter);
 app.use('/spericeira', spericeiraRouter);
 app.use('/spexpo', spexpoRouter);

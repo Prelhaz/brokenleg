@@ -1,25 +1,25 @@
 </br></br></br>
 
-<form method="post" action="/createSpot/{{user._id}}">
+<form method="post" action="/create/{{user._id}}">
   <div class="form-group">
     <label for="spotName">Spot Name</label>
-    <input type="text" class="form-control" placeholder="Spot Name">
+    <input type="text" name="name" class="form-control" placeholder="Spot Name">
   </div>
   <div class="form-group">
     <label for="adress">Adress</label>
-    <input type="text" class="form-control" placeholder="Adress">
+    <input type="text" name="address" class="form-control" placeholder="Adress">
   </div>
   <div class="form-group">
     <label for="city">City</label>
-    <select class="form-control" id="city">
-      {{#each city}}
+    <select class="form-control" name="city">
+      {{#each chooseCity}}
       <option>{{this}}</option>
       {{/each}}
     </select>
   </div>
   <div class="form-group">
     <label for="spotType">Spot type</label>
-    <select class="form-control" >
+    <select class="form-control" name="spotType">
       <option>Skate Park</option>
       <option>Flat</option>
       <option>Rail</option>
@@ -30,16 +30,17 @@
     <label for="coordinates">Coordinates</label>
   <div class="form-row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Latitude">
+      <input type="text" name="lat" class="form-control" placeholder="Latitude">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Longitude">
+      <input type="text" name="lng" class="form-control" placeholder="Longitude">
     </div>
   </div>
   </br>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Description</label>
-    <textarea class="form-control" rows="3"></textarea>
+    <textarea class="form-control" name="description" rows="3"></textarea>
   </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

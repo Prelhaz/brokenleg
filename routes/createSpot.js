@@ -2,71 +2,12 @@
 
 const { Router } = require('express');
 const router = Router();
-// const createSpots = require('../models/spots');
-
-// router.get('/create', (req, res, next) => {
-// res.render('createSpot');
-
-// });
+const Spot = require('../models/spot');
+const User = require('../models/user');
 
 
-// router.get("/create", (req, res, next) => {
-//   createSpots.find()
-//     .then(spots => {
-//       res.render("createSpot", {
-//         spots
-//       });
-//     })
-//     .catch(next);
-// });
-// router.post("/spots", (req, res, next) => {
 
-//   createSpots.create({
-//     name: req.body.name, 
-//     adress: req.body.adress,
-//     lat: req.body.lat,
-//     lng: req.body.lng,
-//     description: req.body.description
-//   }).then(() => {
-//     res.redirect("/createSpot");
-//   });
-// });
-
-// router.get("/createSpots/:spotsId/editspots", (req, res, next) => {
-//   let spotsId = req.params.spotsId
-//   createSpots.findById(spotsId)
-//     .then(spots => {
-//       res.render("/editspots", { spots });
-//     })
-// });
-
-// router.post("/createSpots/:spotsId/editspots", (req, res, next) => {
-//   let spotsId = req.params.spotsId
-//   createSpots.findByIdAndUpdate(spotsId, {
-//     name: req.body.name, 
-//     adress: req.body.adress,
-//     lat: req.body.lat,
-//     lng: req.body.lng,
-//     description: req.body.description
-//   }).then(() => {
-//     res.redirect("/editspots/"+ spotsId);
-//   });
-// });
-
-
-// router.get("/createSpots/:spotsId/delete", (req, res, next) => {
-//   let spotsId = req.params.spotsId
-//   createSpots.findByIdAndDelete(spotsId)
-//     .then(() => {
-//       res.redirect("/createSpot");
-//     }),
-// });
-
-
-// module.exports = router;
-
-
-const city = [
+const chooseCity = [
   "Abrantes", "Agualva-Cacém", "Águeda", "Albergaria-a-Velha", "Albufeira", "Alcácer do Sal", "Alcobaça", "Alfena", "Almada",
   "Almeirim", "Alverca do Ribatejo", "Amadora", "Amarante", "Amora", "Anadia", "Angra do Heroísmo", "Aveiro", "Barcelos", "Barreiro",
   "Beja", "Borba", "Braga", "Bragança", "Caldas da Rainha", "Câmara de Lobos", "Caniço", "Cantanhede", "Cartaxo", "Castelo Branco", "Chaves",
@@ -84,92 +25,35 @@ const city = [
   "Vila Nova de Gaia", "Vila Nova de Santo André", "Vila Real", "Vila Real de Santo António", "Viseu", "Vizela"
 ];
 
-const Spots = require('../models/spots');
 
 
  //GET home page 
 
-router.get('/create', (req, res, next) => {
-  Spots.find()
-    .then((spots) => {
-      const data ={
-        spots,
-        city
-      }
+router.get('/create/:userId', (req, res, next) => {
+  User.findById(req.params.userId)
+    .then(user => { 
+      const data = {chooseCity};
       res.render('createSpot', data);
-    })
+  })
     .catch(err => console.log(err));
 });
 
+router.post('/create/:userId', (req, res, next) => {
+const data = {   name: req.body.name,
+   adress: req.body.address,
+   city: req.body.city,
+   spotType: req.body.spotType,
+   lat: req.body.lat,
+   lng: req.body.lng,
+   description: req.body.description,
+   userId: req.params.userId}
 
-// router.get('/createSpot', (req, res, next) => {
-//   res.render('createSpot');
-// });
-
-router.post('/createSpot', (req, res, next) => {
-  const {
-    name, type, latitude, longitude
-  } = req.body;
-
-  const location = {
-    type: 'Point',
-    coordinates: [longitude, latitude]
-  };
-  const newSpot = new Spots({ name, type, location });
-
-  newSpot.save()
-    .then(() => {
-      res.redirect('/createSpot');
-    })
-    .catch((error) => {
-      console.log(error);
+   console.log("REQ.BODY ",data)
+  Spot.create(data)
+    .then(spot => {
+      console.log(spot);
+      res.redirect(`/spericeira/${req.params.userId}`);
     });
 });
-
-router.get('/editSpots/:id', (req, res, next) => {
-  const spots = req.params.id;
-  Spots.findById(spots)
-    .then((spot) => {
-      res.render('editSpots', spots);
-    })
-    .catch(err => console.log(err));
-});
-
-router.post('/editSpots/:id', (req, res, next) => {
-  const {
-    name, type, latitude, longitude,
-  } = req.body;
-
-  const location = {
-    type: 'Point',
-    coordinates: [longitude, latitude]
-  };
-
-  Spots.update({ _id: req.params.id }, { $set: { name, type, location } })
-    .then(() => {
-      res.redirect('/');
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
-
-router.post('/deleteSpots/:id', (req, res, next) => {
-  const spots = req.params.id;
-  Spots.findByIdAndDelete(spots)
-    .then(() => {
-      res.redirect('/createSpot');
-    })
-    .catch(err => console.log(err));
-});
-
-router.get('/api', (req, res, next) => {
-  Spots.find()
-    .then((spots) => {
-      res.status(200).json({ spots });
-    })
-    .catch(error => console.log(error));
-});
-
 
 module.exports = router;
