@@ -3,6 +3,7 @@
 // User model goes here
 
 const mongoose = require('mongoose');
+const Object = mongoose.Schema.Types.ObjectId;
 
 const schema = new mongoose.Schema({
   username: {
@@ -20,7 +21,11 @@ const schema = new mongoose.Schema({
   passwordHash: {
     type: String,
     required: true
-  }
+  },
+  spotList: [
+    {type: Object,
+    ref: "Spots"}
+  ]
 });
 
 const signInStatic = require('./sign-in-static');

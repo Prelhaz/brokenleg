@@ -11,4 +11,6 @@
 <a href="/update/{{user._id}}" class="btn btn-outline-primary">Edit</a>
 <a href="/celebrities/{{userDetails._id}}delete" class="btn btn-outline-danger">Delete</a>
 
-
+{{#each spotList}}
+  {{> spotcard spot=this username=../username}}
+{{/each}}

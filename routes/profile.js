@@ -4,9 +4,10 @@ const { Router } = require('express');
 const router = Router();
 const User = require('../models/user');
 
-router.get('/profile/:userId', (req, res, next) => {
+router.get('/profile/:userId', (req, res) => {
   User.findById(req.params.userId)
-    .then(user => { 
+    .populate("spotList")
+    .then(user => {
       res.render('profile', user);
   });
 });

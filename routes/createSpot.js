@@ -39,20 +39,38 @@ router.get('/create/:userId', (req, res, next) => {
 });
 
 router.post('/create/:userId', (req, res, next) => {
-const data = {   name: req.body.name,
-   adress: req.body.address,
-   city: req.body.city,
-   spotType: req.body.spotType,
-   lat: req.body.lat,
-   lng: req.body.lng,
-   description: req.body.description,
-   userId: req.params.userId}
+const data = {   
+  name: req.body.name,
+  address: req.body.address,
+  city: req.body.city,
+  spotType: req.body.spotType,
+  lat: req.body.lat,
+  lng: req.body.lng,
+  description: req.body.description,
+  userId: req.params.userId}
 
-   console.log("REQ.BODY ",data)
+  console.log("REQ.BODY ",data)
+  
   Spot.create(data)
     .then(spot => {
-      console.log(spot);
-      res.redirect(`/spericeira/${req.params.userId}`);
+      //todo
+      User.findByIdAndUpdate(req.params.userId, {$push: {spotList: spot._id}})
+        .then((user) => {
+          console.log(user);
+          res.redirect(`/spot/${spot._id}`)
+        });
+    })
+    .catch(error => {
+      console.log(error);
+      res.redirect('/create/:userId');
+    });
+});
+
+router.get(`/spot/:id`, (req, res, next) => {
+  Spot.findById(req.params.id)
+  .populate("userId")
+  .then(spot => {
+      res.render('spot', spot)
     });
 });
 

@@ -8,7 +8,7 @@ const schema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  adress:{
+  address:{
     type: String,
     required: true,
     trim: true
@@ -32,6 +32,7 @@ const schema = new mongoose.Schema({
   },
   userId: { 
     type: Object,
+    ref: "User",
     required: true
   },
   pictures: {

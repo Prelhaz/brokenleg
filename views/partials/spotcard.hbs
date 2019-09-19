@@ -1,8 +1,19 @@
-<div class="card" style="width: 20rem;">
-    <img src="/images/fig.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Praça Figueira</h5>
-        <p class="card-text">Manequim feminino restaurado com altura regulável (1.58x1.73cm).</p>
-        <a href="#" class="btn btn-danger">Comprar</a>
-    </div>
+</br></br></br></br>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{spot.name}}</h5>
+    <p class="card-text"> 
+      <ul class="list-group">
+  <li class="list-group-item">{{spot.address}}</li>
+  <li class="list-group-item">{{username}}</li>
+  <li class="list-group-item">{{spot.city}}</li>
+  <li class="list-group-item">{{spot.description}}</li>
+  <a class="nav-link" target="popup" href="https://www.google.pt/maps/@{{spot.lat}},{{spot.lng}},17.5z">Map</a>
+</ul>
+    </p>
+  </div>
+  <img src="/images/1369584839Skatepark-Ericeira-01-CALIDAD30.jpg" class="card-img-top" alt="...">
+</div>
+<div class="spinner-grow text-warning" role="status">
+  <span class="sr-only">Loading...</span>
 </div>
