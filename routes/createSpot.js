@@ -73,18 +73,18 @@ const Spots = require('../models/spots');
 
  //GET home page 
 
-router.get('/', (req, res, next) => {
+router.get('/create', (req, res, next) => {
   Spots.find()
     .then((spots) => {
-      res.render('index', { spots });
+      res.render('createSpot', { spots });
     })
     .catch(err => console.log(err));
 });
 
 
-router.get('/createSpot', (req, res, next) => {
-  res.render('createSpot');
-});
+// router.get('/createSpot', (req, res, next) => {
+//   res.render('createSpot');
+// });
 
 router.post('/createSpot', (req, res, next) => {
   const {
