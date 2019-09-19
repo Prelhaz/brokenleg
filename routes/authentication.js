@@ -18,7 +18,7 @@ router.post('/signup', (req, res, next) => {
       req.session.user = {
         _id: user._id
       };
-      console.log('Signed up user', user);
+      console.log('Signed up user');
       res.redirect(`/profile/${user._id}`); 
     })
     .catch(error => {
@@ -41,7 +41,7 @@ router.post('/signin', (req, res, next) => {
       req.session.user = {
         _id: user._id
       };
-      console.log('Signed in user', user);
+      console.log('Signed in user');
       res.redirect(`/profile/${user._id}`);
     })
     .catch(error => {

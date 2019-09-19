@@ -71,7 +71,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/user', authenticationRouter);
 app.use('/map', spotsRouter);
-app.use('/userUpdate', usersUpdateRouter);
+app.use('/', usersUpdateRouter);
 app.use('/createSpot', createSpotRouter);
 app.use('/picture', pictureRouter);
 app.use('/spericeira', spericeiraRouter);

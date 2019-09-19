@@ -8,6 +8,6 @@
   <li><strong>Username:</strong> {{username}}</li>
   <li><strong>Email:</strong> {{email}}</li>
 </ul>
-{{!-- select the id and add it to my url, but also adding a path for the EDIT and DELETE route --}}
-<a href="/celebrities/{{userDetails._id}}/edit" class="btn btn-outline-primary">Edit</a>
+
+<a href="/update/{{user._id}}" class="btn btn-outline-primary">Edit</a>
 <a href="/celebrities/{{userDetails._id}}/delete" class="btn btn-outline-danger">Delete</a>
