@@ -82,9 +82,9 @@ router.get('/create', (req, res, next) => {
 });
 
 
-// router.get('/createSpot', (req, res, next) => {
-//   res.render('createSpot');
-// });
+router.get('/createSpot', (req, res, next) => {
+  res.render('createSpot');
+});
 
 router.post('/createSpot', (req, res, next) => {
   const {
@@ -138,7 +138,7 @@ router.post('/deleteSpots/:id', (req, res, next) => {
   const spots = req.params.id;
   Spots.findByIdAndDelete(spots)
     .then(() => {
-      res.redirect('/createSpot');
+      res.redirect('/deleteSpot');
     })
     .catch(err => console.log(err));
 });
