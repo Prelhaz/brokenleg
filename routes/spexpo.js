@@ -4,7 +4,7 @@ const { Router } = require('express');
 const router = Router();
 
 router.get('/', (req, res, next) => {
-  res.render('singlespot');
+  res.render('spexpo');
 });
 
 module.exports = router;

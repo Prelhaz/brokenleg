@@ -19,8 +19,13 @@ const spotsRouter = require('./routes/map');
 const authenticationRouter = require('./routes/authentication');
 const usersUpdateRouter = require('./routes/userUpdate');
 const createSpotRouter = require('./routes/createSpot');
-const singleSpotRouter = require('./routes/singlespot');
+const spericeiraRouter = require('./routes/spericeira');
 const profileRouter = require('./routes/profile');
+const spexpoRouter = require('./routes/spexpo');
+const spmonsantoRouter = require('./routes/spmonsanto');
+const spcaldasdarainhaRouter = require('./routes/spcaldasdarainha');
+const spoeirasRouter = require('./routes/spoeiras');
+const spsaosebastiaoRouter = require('./routes/spsaosebastiao');
 
 const app = express();
 
@@ -67,7 +72,12 @@ app.use('/user', authenticationRouter);
 app.use('/map', spotsRouter);
 app.use('/userUpdate', usersUpdateRouter);
 app.use('/createSpot', createSpotRouter);
-app.use('/singlespot', singleSpotRouter);
+app.use('/spericeira', spericeiraRouter);
+app.use('/spexpo', spexpoRouter);
+app.use('/spmonsanto', spmonsantoRouter);
+app.use('/spcaldasdarainha', spcaldasdarainhaRouter);
+app.use('/spoeiras', spoeirasRouter);
+app.use('/spsaosebastiao', spsaosebastiaoRouter);
 app.use('/', profileRouter);
 
 //---------------------------------------------------------------------- routes ------------------- routes ----------------
