@@ -5,9 +5,9 @@
     <link rel='stylesheet' href='/styles/style.css' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body>
+  <body background="/public/images/skatepark.jpg">
     <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1 fixed-top">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg p-1 fixed-top" >
         <a class="navbar-brand" href="#">
             {{!-- <img src="/images/aspot.svg" width="80" height="80" alt=""> --}}
         </a>
@@ -23,8 +23,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/createSpot/create">Create a Spot</a>
                 </li>
-                <form method="POST" action="/user/signout">
-                    <button class="btn">Sign Out</button>
+                    <form method="POST" action="/user/signout">
+                        <button class="btn">Sign Out</button>
                 {{else}}
                 <li class="nav-item">
                     <a class="nav-link" href="/user/signin">Sign-in</a>
@@ -36,11 +36,36 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/map/mapcanvas">Map</a>
                 </li>
-                </form>
             </ul>
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
         </div>
     </nav>
 </div>
     {{{body}}}
   </body>
 </html>
+
+{{!-- 
+<div class="collapse navbar-collapse" id="navbarNav">
+   <ul class="navbar-nav">
+     {{#if user}}
+     <li class="nav-item active">
+       <a class="nav-link" href="/authentication/private">Private<span class="sr-only">(current)</span></a>
+     </li>
+     <li class="nav-item active">
+       <a class="nav-link" href="/authentication/private">Private<span class="sr-only">(current)</span></a>
+     </li>
+     {{else}}
+     <li class="nav-item active">
+       <a class="nav-link" href="/authentication/sign-up">Sign-Up <span class="sr-only">(current)</span></a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="/authentication/sign-in">Sign-In</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="/authentication/private">Private</a>
+     </li>
+     {{/if}} --}}

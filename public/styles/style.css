@@ -1,7 +1,14 @@
 body {
   margin: 0;
   padding: 50px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  background: url('/public/images/skatepark.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 
 a {
   color: #00b7ff; }

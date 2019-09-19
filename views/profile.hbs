@@ -2,12 +2,11 @@
 </br>
 </br>
 
-<h2> Your {{username}} profile</h2>
 
+<h2> Your profile <strong> {{username}}</strong> </h2>
 <ul>
   <li><strong>Username:</strong> {{username}}</li>
   <li><strong>Email:</strong> {{email}}</li>
 </ul>
-
 <a href="/update/{{user._id}}" class="btn btn-outline-primary">Edit</a>
-<a href="/celebrities/{{userDetails._id}}/delete" class="btn btn-outline-danger">Delete</a>
+<a href="/delete/{{userDetails._id}}" class="btn btn-outline-danger">Delete</a>
