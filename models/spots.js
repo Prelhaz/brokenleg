@@ -66,7 +66,7 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
   name: String,
-  type: { type: String, enum: ['coffee shop', 'bookstore'] },
+  type: { type: String },
   location: { type: { type: String }, coordinates: [Number] }
 }, {
     timestamps: true
