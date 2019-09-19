@@ -1,58 +1,45 @@
-<script src="./../public/scripts/selectMultipleFiles.js"></script>
+</br></br></br>
 
-{{!-- <div class='container'>
-    <h1>Create your spot</h1>
-</div>
-<form method="POST" action="">
+<form method="post" action="/createSpot/{{user._id}}">
   <div class="form-group">
-    <label for="spotName">Name</label>
-    <input type="text" name="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Spot Name">
-    <small id="emailHelp" class="form-text text-muted">Spot Name</small>
+    <label for="spotName">Spot Name</label>
+    <input type="text" class="form-control" placeholder="Spot Name">
   </div>
   <div class="form-group">
     <label for="adress">Adress</label>
-    <input type="text" name:"adress" class="form-control" id="exampleInputAdress" aria-describedby="emailHelp" placeholder="Adress">
-    <small id="emailHelp" class="form-text text-muted">Adress</small>
+    <input type="text" class="form-control" placeholder="Adress">
   </div>
   <div class="form-group">
-    <label for="latitude">Latitude</label>
-    <input type="number" name="lat" class="form-control" id="exampleInputLat" aria-describedby="emailHelp" placeholder="Latitude">
-    <small id="emailHelp" class="form-text text-muted">Latitude</small>
+    <label for="city">City</label>
+    <select class="form-control" id="city">
+      {{#each city}}
+      <option>{{this}}</option>
+      {{/each}}
+    </select>
   </div>
   <div class="form-group">
-    <label for="longitude">Longitude</label>
-    <input type="number" name="lng" class="form-control" id="exampleInputLng" placeholder="Longitude">
+    <label for="spotType">Spot type</label>
+    <select class="form-control" >
+      <option>Skate Park</option>
+      <option>Flat</option>
+      <option>Rail</option>
+      <option>Stairs</option>
+      <option>Ramp</option>
+    </select>
   </div>
+    <label for="coordinates">Coordinates</label>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Latitude">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Longitude">
+    </div>
+  </div>
+  </br>
   <div class="form-group">
-    <label for="description">Description</label>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea class="form-control" rows="3"></textarea>
   </div>
-  <article>
-    <label for="files">Select multiple files: </label>
-    <input id="files" type="file" multiple/>
-    <output id="result" />
-  </article>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> --}}
-
-
-<a href="/">Return</a>
-<h1>Create a Spot</h1>
-
-<form action="/create" method="post">
-  
- <label>Name:</label>
-  <input type="text" name="name">
-
- <label>Type:</label>
-  <input type="text" name="type">
-
- <label for="adress">Adress</label>
-  <input type="text" name:"adress" placeholder="Adress">
-
- <label>Location</label>
-  <input type="text" name="latitude" placeholder="latitude" >
-  <input type="text" name="longitude" placeholder="longitude">
-
-  <button type="submit">Create</button>
 </form>
+
