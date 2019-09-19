@@ -4,7 +4,6 @@ const { Router } = require('express');
 const router = Router();
 const User = require('./../models/user');
 
-
 router.get('/signup', (req, res, next) => {
   res.render('signup');
 });

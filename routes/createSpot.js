@@ -4,6 +4,7 @@ const { Router } = require('express');
 const router = Router();
 const Spot = require('../models/spot');
 const User = require('../models/user');
+const routeGuardMiddleware = require('./../controllers/route-guard-middleware');
 
 
 
@@ -29,7 +30,7 @@ const chooseCity = [
 
  //GET home page 
 
-router.get('/create/:userId', (req, res, next) => {
+router.get('/create/:userId', routeGuardMiddleware, (req, res, next) => {
   User.findById(req.params.userId)
     .then(user => { 
       const data = {chooseCity};
