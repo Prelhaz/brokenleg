@@ -1,6 +1,5 @@
 </br>
 </br>
-</br>
 
 <div class="card text-center">
   <div class="card-header">
@@ -11,11 +10,14 @@
      
 <strong>Username:</strong> {{username}} <br/>
  <strong>Email:</strong> {{email}}
-
     </h5>
     <a href="/update/{{user._id}}" class="btn btn-primary">Edit</a>
   </div>
   <div class="card-footer text-muted">
   </div>
 </div>
-
+<div class="card-deck">
+  {{#each spotList}}
+    {{> spotcard spot=this username=../username}}
+  {{/each}}
+</div>

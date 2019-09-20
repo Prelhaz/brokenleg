@@ -2,4 +2,20 @@
 </br>
 </br>
 </br>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+     <form method="GET" action="/">
+      <div class="d-flex justify-content-center ml-auto form-group form-inline">
+         <select class="form-control" name="city">
+            {{#each chooseCity}}
+               <option value="{{this}}">{{this}}</option>
+            {{/each}}
+         </select>
+         <button class="btn btn-warning">Search</button>
+      </div>
+   </form>
+  </div>
+</div>
+
    {{>top3}}

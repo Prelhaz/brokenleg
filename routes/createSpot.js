@@ -9,7 +9,7 @@ const routeGuardMiddleware = require('./../controllers/route-guard-middleware');
 
 
 const chooseCity = [
-  "Abrantes", "Agualva-Cacém", "Águeda", "Albergaria-a-Velha", "Albufeira", "Alcácer do Sal", "Alcobaça", "Alfena", "Almada",
+  "", "Abrantes", "Agualva-Cacém", "Águeda", "Albergaria-a-Velha", "Albufeira", "Alcácer do Sal", "Alcobaça", "Alfena", "Almada",
   "Almeirim", "Alverca do Ribatejo", "Amadora", "Amarante", "Amora", "Anadia", "Angra do Heroísmo", "Aveiro", "Barcelos", "Barreiro",
   "Beja", "Borba", "Braga", "Bragança", "Caldas da Rainha", "Câmara de Lobos", "Caniço", "Cantanhede", "Cartaxo", "Castelo Branco", "Chaves",
   "Coimbra", "Costa da Caparica", "Covilhã", "Elvas", "Entroncamento", "Ermesinde", "Esmoriz", "Espinho", "Esposende", "Estarreja", "Estremoz",
