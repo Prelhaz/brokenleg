@@ -2,13 +2,16 @@ body {
   margin: 0;
   padding: 50px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
-  background: url('/images/skatepark.jpg') no-repeat center center fixed;
+  background: url('/images/03.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
 
+.navbar {
+  background: #2b434f
+}
 
 a {
   color: #00b7ff; }
