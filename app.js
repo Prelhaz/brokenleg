@@ -26,7 +26,7 @@ const spmonsantoRouter = require('./routes/spmonsanto');
 const spcaldasdarainhaRouter = require('./routes/spcaldasdarainha');
 const spoeirasRouter = require('./routes/spoeiras');
 const spsaosebastiaoRouter = require('./routes/spsaosebastiao');
-const pictureRouter = require('./routes/picture');
+const imageRouter = require('./routes/image');
 
 const app = express();
 
@@ -73,7 +73,7 @@ app.use('/user', authenticationRouter);
 app.use('/map', spotsRouter);
 app.use('/', usersUpdateRouter);
 app.use('/', createSpotRouter);
-app.use('/picture', pictureRouter);
+app.use('/', imageRouter);
 app.use('/spericeira', spericeiraRouter);
 app.use('/spexpo', spexpoRouter);
 app.use('/spmonsanto', spmonsantoRouter);

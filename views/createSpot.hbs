@@ -41,6 +41,22 @@
     <label for="exampleFormControlTextarea1">Description</label>
     <textarea class="form-control" name="description" rows="3"></textarea>
   </div>
-  <button type="submit" class="btn btn-warning">Submit</button>
 </form>
-
+<div class="row d-flex justify-content-center">
+  {{#each images}}
+    <figure>
+      {{!-- <img src={{this.url}} alt={{this.description}}> --}}
+      <img src={{this.resizedUrl}} alt={{this.description}}>
+      <p>{{this.description}}</p>
+    </figure>
+  {{/each}}
+</div>
+<div class="container">
+  <form method="POST" action="/upload-file" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="upload-file">Image</label>
+      <input id="upload-file" class="form-control" type="file" name="file">
+    <button class="btn btn-warning">Submit</button>
+    </div>
+  </form>
+</div>
