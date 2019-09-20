@@ -24,7 +24,7 @@ router.post('/picture/add', uploadCloud.single('photo'), (req, res, next) => {
   const {title, description} = req.body;
   const imgPath = req.file.url;
   const imgName = req.file.originalname;
-  const newPicture = new Picture({title, description, imgPath, imgName})
+  const newPicture = new Picture({title, description, imgPath, imgName});
   new Picture.save()
     .then(picture => {
       res.redirect('/');

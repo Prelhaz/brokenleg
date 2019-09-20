@@ -12,5 +12,13 @@ const pictureSchema = new Schema({
   timestamps: { createdAt: "createdAt", updatedAt: "updatedAt" }
 });
 
-const Picture = mongoose.model("Picture", pictureSchema);
-module.exports = Picture;
+const cloudinary = require('cloudinary');
+
+pictureSchema.virtual('resizedUrl').get(function() {
+  const image = this;
+  const path = image.url.split(`http://res.cloudinary.com/${ process.env.CLOUDINARY_API_NAME }/image/upload/`)[1];
+   console.log(path);
+  return cloudinary.url(path, { width: 400 });
+  });
+
+  module.exports = mongoose.model("Picture", pictureSchema);
