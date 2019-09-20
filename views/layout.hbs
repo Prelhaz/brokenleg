@@ -21,9 +21,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/create/{{user._id}}">Create a Spot</a>
                   </li>
-                  <form method="POST" action="/user/signout">
-                  <button class="btn text-warning">Sign Out</button>
-                  </form>
                 {{else}}
                 <li class="nav-item">
                     <a class="nav-link" href="/user/signin">Sign-in</a>
@@ -33,11 +30,11 @@
                 </li>
                 {{/if}}
             </ul>
-                <form class="form-inline my-2 my-lg-0 justify-content-end ml-auto">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                
+            {{#if user}}
+              <form method="POST" action="/user/signout" class="form-inline my-2 my-lg-0 justify-content-end ml-auto">
+                  <button class="btn btn-outline-warning my-2 my-sm-0" >Sign Out</button>
+              </form>
+            {{/if}}
         </div>
     </nav>
 </div>

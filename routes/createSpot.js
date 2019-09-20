@@ -80,4 +80,6 @@ router.get(`/spot/delete/:_id`, (req, res, next) => {
       res.redirect(`/profile/${req.session.user._id}`);
     });
 });
+
+// router.get()
 module.exports = router;
