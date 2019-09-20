@@ -2,16 +2,6 @@
 </br>
 </br>
 
-
-<h2> Your profile <strong> {{username}}</strong> </h2>
-<ul>
-  <li><strong>Username:</strong> {{username}}</li>
-  <li><strong>Email:</strong> {{email}}</li>
-</ul>
-<a href="/update/{{user._id}}" class="btn btn-outline-primary">Edit</a>
-<a href="/celebrities/{{userDetails._id}}delete" class="btn btn-outline-danger">Delete</a>
-
-
 <div class="card text-center">
   <div class="card-header">
     <h2> Your profile <strong> {{username}}</strong> </h2>
@@ -30,6 +20,8 @@
   </div>
 </div>
 
-{{#each spotList}}
-  {{> spotcard spot=this username=../username}}
-{{/each}}
+<div class="card-deck">
+  {{#each spotList}}
+    {{> spotcard spot=this username=../username}}
+  {{/each}}
+</div>
