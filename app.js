@@ -34,6 +34,13 @@ const app = express();
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerHelper('ifCond', function(v1, v2, options) {
+  if (v1 == v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(express.static(join(__dirname, 'public')));

@@ -26,8 +26,6 @@ const chooseCity = [
   "Vila Nova de Gaia", "Vila Nova de Santo André", "Vila Real", "Vila Real de Santo António", "Viseu", "Vizela"
 ];
 
-
-
  //GET home page 
 
 router.get('/create/:userId', routeGuardMiddleware, (req, res, next) => {
@@ -75,4 +73,11 @@ router.get(`/spot/:id`, (req, res, next) => {
     });
 });
 
+router.get(`/spot/delete/:_id`, (req, res, next) => {
+  const spotId = req.params._id;
+  Spot.findByIdAndDelete(spotId)
+    .then(() => {
+      res.redirect(`/profile/${req.session.user._id}`);
+    });
+});
 module.exports = router;

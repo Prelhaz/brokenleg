@@ -8,12 +8,15 @@
   <li class="list-group-item">{{userId.username}}</li>
   <li class="list-group-item">{{city}}</li>
   <li class="list-group-item">{{description}}</li>
-  <a class="nav-link" target="popup" href="https://www.google.pt/maps/@{{lat}},{{lng}},17.5z">Map</a>
+  <a class="nav-link text-warning text-center" target="popup" href="https://www.google.pt/maps/@{{lat}},{{lng}},17.5z">Map</a>
 </ul>
     </p>
   </div>
   <img src="/images/1369584839Skatepark-Ericeira-01-CALIDAD30.jpg" class="card-img-top" alt="...">
 </div>
-<div class="spinner-grow text-warning" role="status">
-  <span class="sr-only">Loading...</span>
-</div>
+</br>
+  {{#ifCond user._id userId._id}}
+    <form method="GET" action="/spot/delete/{{_id}}">
+      <button type="submit" class="btn btn-block btn-warning">Delete Spot</button>
+    </form>
+  {{/ifCond}}

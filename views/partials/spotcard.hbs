@@ -1,15 +1,15 @@
 </br></br></br></br>
 
  <div class="card">
-  <img src="{{spot.url}}" class="figure-img img-fluid rounded" alt="...">
+  <a href="/spot/{{spot._id}}">
+    <img src="{{spot.url}}" class="figure-img img-fluid rounded" alt="...">
+  </a>
   <div class="card-body">
     <h5 class="card-title">{{spot.name}}</h5>
     <p class="card-text">{{spot.description}}</p>
     <p class="card-text"><small class="text-muted">{{spot.city}}: {{spot.address}}</small></p>
-    <div>
-      <a href="#" class="btn btn-warning">See Spot</a>
-      <a class="nav-link" target="popup" href="https://www.google.pt/maps/@{{spot.lat}},{{spot.lng}},17.5z">Map</a>
-    </div>
+    <a class="btn btn-warning d-flex justify-content-center" target="popup" href="https://www.google.pt/maps/@{{spot.lat}},{{spot.lng}},17.5z">Map</a>
+    </br>
     <div class="card-footer text-muted text-right">
       Created by {{username}}
     </div>
